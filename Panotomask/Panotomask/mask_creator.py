@@ -288,7 +288,7 @@ class Maskcreation:
 
         # Tìm ảnh trong top 5 có nhiều pixel trùng màu nhất với dominant color
         best_img_np, best_score = self.detector.select_by_dominant_color(top5_imgs,rgb)
-        if best_score < 100000 and best_score > 2200:
+        if best_score < 100000 and best_score>2200:
             return None, None
 
         if best_img_np is None:
@@ -321,7 +321,7 @@ class Maskcreation:
         # print(f"✓ Saved dominant color to {txt_path}")
         print("Mask create successfully", pano_name, best_score)
         if best_score <=2200:
-            return mask_img, 1 
+            return mask_img, 1
         elif best_score >=100000:
             return mask_img, 2
         return mask_img, 3
