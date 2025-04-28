@@ -23,6 +23,12 @@ wget https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-linux-x
 **Download and extract the Blender folder into the Data_preprocessing folder.**
 
 ### Start Preprocessing:
+**Objects folder format should look like this :**
+```
+/path/to/objects/
+│   └── obj1/  
+│   └── obj2/ 
+```
 #### If you are using Windows, use Git Bash instead of CMD/PowerShell.
 Grant permissions: 
 ```
@@ -37,12 +43,7 @@ Windows:
 ```
 Data_preprocessing/run_win.sh /path/to/your/objects/folder/
 ```
-**Objects folder format should look like this :**
-```
-/path/to/objects/
-│   └── obj1/  
-│   └── obj2/ 
-```
+
 after rendering:
 ```
 /path/to/objects/
