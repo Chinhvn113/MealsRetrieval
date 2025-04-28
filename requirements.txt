@@ -16,3 +16,4 @@ pillow
 tqdm
 scikit-learn
 ultralytics
+setencepiece
