@@ -22,7 +22,7 @@ wget https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-linux-x
 ### Start Preprocessing:
 Grant permissions: 
 ```
-chmod +x run.sh
+chmod +x Data_preprocessing/run.sh
 ```
 Run:
 ```
