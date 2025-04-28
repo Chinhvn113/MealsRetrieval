@@ -44,7 +44,7 @@ after rendering:
 ```
 ### Construct database:
 ```
-python /Database/faiss_retrive_demo.py --object_dir path/to/objects/ --index_save_dir path/to/indexfolder #save index database into a folder
+python /Database/faiss_retrieve_demo.py --object_dir path/to/objects/ --index_save_dir path/to/indexfolder #save index database into a folder
 ```
 ### Run inference:
 ```
