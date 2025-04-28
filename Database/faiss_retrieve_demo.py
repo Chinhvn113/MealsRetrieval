@@ -36,15 +36,15 @@ import argparse
 # │     │     ├── img1.jpg
 # │     │     ├── img2.jpg
 # │     │──text_description_for_obj2.txt 
-# Step 1: Build database from your dataset
 parser = argparse.ArgumentParser(description='Run pipeline')
 parser.add_argument('--object_dir', required=True, help='Input dir')
+parser.add_argument('--index_save_dir', required=True, help='Index save dir')
 arg = parser.parse_args()
 faiss_manager = FAISSManager(embedding_dim=1024)
 object_root = arg.object_dir
 faiss_manager.build(object_root)  
-faiss_manager.save("/root/faiss_index")  # This saves indexes + metadata + object root
-faiss_manager.load(save_dir="/root/faiss_index")
+faiss_manager.save(arg.index_save_dir)  # This saves indexes + metadata + object root
+faiss_manager.load(arg.index_save_dir)
 
 # # Perform search with both query and answer embeddings
 results,answer_embeddings = faiss_manager.search(
