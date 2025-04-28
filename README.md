@@ -24,10 +24,10 @@ mv Zero-Painter/* models
 cd ..
 ```
 ## Data Preprocessing
-### download blender:
-- windown: Download using this link
+### Download blender:
+- Windows: Download using this link
  https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-windows-x64.zip
-- linux: enter this command in terminal
+- Linux: enter this command in terminal
 ```
 wget https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-linux-x64.tar.xz
 ```
