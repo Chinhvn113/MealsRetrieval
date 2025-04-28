@@ -1,5 +1,6 @@
 from FAISSrun import FAISSManager # Your builder class
 from PIL import Image
+import argparse
 #Data structure
 #Data/
 # │  ──object1/
@@ -36,10 +37,13 @@ from PIL import Image
 # │     │     ├── img2.jpg
 # │     │──text_description_for_obj2.txt 
 # Step 1: Build database from your dataset
+parser = argparse.ArgumentParser(description='Run pipeline')
+parser.add_argument('--object_dir', required=True, help='Input dir')
+arg = parser.parse_args()
 faiss_manager = FAISSManager(embedding_dim=1024)
-# object_root = "/root/fullobjectcaptioin"
-# faiss_manager.build(object_root)  
-# faiss_manager.save("/root/faiss_index")  # This saves indexes + metadata + object root
+object_root = arg.input
+faiss_manager.build(object_root)  
+faiss_manager.save("/root/faiss_index")  # This saves indexes + metadata + object root
 faiss_manager.load(save_dir="/root/faiss_index")
 
 # # Perform search with both query and answer embeddings
