@@ -4,7 +4,11 @@
 ```
 pip install -r requirements.txt
 ```
-
+### Dowload dataset
+'''
+gdown
+unzip
+'''
 ### download blender:
 - windown: Download using this link
  https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-windows-x64.zip
@@ -29,3 +33,8 @@ Run:
 │   └── obj1/  
 │   └── obj2/ 
 ```
+
+### Run inference:
+'''
+python main.py --input private
+'''
