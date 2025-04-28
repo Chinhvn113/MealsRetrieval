@@ -2,7 +2,8 @@
 
 ## Usage:
 We use **Python 3.10.13** and **ubuntu 22.04**
-36+ Gb vram GPU
+
+Requires 30+ Gb vram
 ### Install Requirements:
 
 ```
