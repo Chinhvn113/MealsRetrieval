@@ -10,6 +10,8 @@ pip install -r requirements.txt
 gdown --fuzzy 'https://drive.google.com/file/d/10EkNQBO_DBKwsEkNVVeJMS3grHCO1Ruz/view?usp=sharing'
 unzip private.zip 
 ```
+### Download inpainting model weights
+Download [models](https://huggingface.co/PAIR/Zero-Painter) weights to the `models` folder inside ZeroPainter
 ## Data Preprocessing
 ### download blender:
 - windown: Download using this link
@@ -19,8 +21,7 @@ unzip private.zip
 wget https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-linux-x64.tar.xz
 ```
 **Download and extract the Blender folder into the Data_preprocessing folder.**
-### Download inpainting model weights
-Download [models](https://huggingface.co/PAIR/Zero-Painter) weights to the `models` folder inside ZeroPainter
+
 ### Start Preprocessing:
 #### If you are using Windows, use Git Bash instead of CMD/PowerShell.
 Grant permissions: 
@@ -28,8 +29,13 @@ Grant permissions:
 chmod +x Data_preprocessing/run.sh
 ```
 Run:
+Linux:
 ```
-Data_preprocessing/run.sh /path/to/your/objects/folder/
+Data_preprocessing/run_linux.sh /path/to/your/objects/folder/
+```
+Windows:
+```
+Data_preprocessing/run_win.sh /path/to/your/objects/folder/
 ```
 **Objects folder format should look like this :**
 ```
