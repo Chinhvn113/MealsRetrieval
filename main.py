@@ -1,6 +1,6 @@
 from Database import FAISSManager
 from Panotomask import Maskcreation 
-from ZeroPainterLoveLLM import Inpainting, ExtractLLM
+from ZeroPainter import Inpainting, ExtractLLM
 import os 
 import argparse
 import pandas as pd
