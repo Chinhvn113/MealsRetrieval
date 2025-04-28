@@ -124,14 +124,14 @@ Focus on accuracy. Only choose based on detailed matching."""
                                 history=None, return_history=True)
  
     import re
-    match = re.search(r'\d+', response)  # Tìm số trong chuỗi
+    match = re.search(r'\d+', response)  # Find number in response
     if match:
         number = int(match.group())
         print(number)  # Output: 1    
 
     top1 = int(number)
-    print("top 1 is: ", Rerank_list[int(number)])
     if top1 == 2:
+        print("top 1 is: ", Rerank_list[int(number)])
         tmp = Rerank_list[1]
         Rerank_list[1] = Rerank_list[2]
         Rerank_list[2] = tmp
