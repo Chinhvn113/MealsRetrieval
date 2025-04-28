@@ -38,9 +38,13 @@ after rendering:
 ```
 /path/to/objects/
 │   └── obj1/
-|           rendered/  
+|           rendered_images/
+|           caption.txt
+|              .....
 │   └── obj2/
-|           rendered/  
+|           rendered_images/
+|           caption.txt
+|           .....
 ```
 ### Construct database:
 ```
