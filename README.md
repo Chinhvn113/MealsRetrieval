@@ -1,5 +1,6 @@
+#MealsRetrieval-ROOMELSA
 
-# Usage:
+## Usage:
 ### Install Requirements:
 ```
 pip install -r requirements.txt
@@ -33,11 +34,19 @@ Run:
 │   └── obj1/  
 │   └── obj2/ 
 ```
-###Construct database:
+after rendering:
 ```
-python Database/faiss_retrive_demo.py --object_dir path/to/your/object --index_save_dir path/to/your/indexfolder #save index database into a folder
+/path/to/objects/
+│   └── obj1/
+|           rendered/  
+│   └── obj2/
+|           rendered/  
+```
+### Construct database:
+```
+python /Database/faiss_retrive_demo.py --object_dir path/to/objects/ --index_save_dir path/to/indexfolder #save index database into a folder
 ```
 ### Run inference:
 ```
-python main.py --input path/to/privatedataset --index_save_dir path/to/your/indexfolder
+python main.py --input path/to/privatedataset --index_save_dir path/to/indexfolder
 ```
