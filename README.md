@@ -12,6 +12,12 @@ unzip private.zip
 ```
 ### Download inpainting model weights
 Download [models](https://huggingface.co/PAIR/Zero-Painter) weights to the `models` folder inside ZeroPainter
+```
+cd ZeroPainter
+mkdir models
+cd models
+git clone https://huggingface.co/PAIR/Zero-Painter
+```
 ## Data Preprocessing
 ### download blender:
 - windown: Download using this link
