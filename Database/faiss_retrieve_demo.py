@@ -41,7 +41,7 @@ parser = argparse.ArgumentParser(description='Run pipeline')
 parser.add_argument('--object_dir', required=True, help='Input dir')
 arg = parser.parse_args()
 faiss_manager = FAISSManager(embedding_dim=1024)
-object_root = arg.input
+object_root = arg.object_dir
 faiss_manager.build(object_root)  
 faiss_manager.save("/root/faiss_index")  # This saves indexes + metadata + object root
 faiss_manager.load(save_dir="/root/faiss_index")
