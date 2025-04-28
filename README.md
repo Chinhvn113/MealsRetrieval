@@ -2,7 +2,7 @@
 
 ## Usage:
 ### Install Requirements:
-**Python 3.10.0**
+- **Python 3.10.0**
 ```
 pip install -r requirements.txt
 ```
