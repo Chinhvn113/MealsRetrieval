@@ -15,11 +15,11 @@ if [ ! -d "$FOLDER_PATH" ]; then
 fi
 
 # path to Blender
-BLENDER_PATH="./blender-4.4.0-linux-x64/blender"
+BLENDER_PATH="Data_preprocessing/blender-4.4.0-linux-x64/blender"
 
 # runing script Blender
 echo "Runing script Blender..."
-$BLENDER_PATH -b -P render_script.py -- "$FOLDER_PATH"
+$BLENDER_PATH -b -P Data_preprocessing/render_script.py -- "$FOLDER_PATH"
 if [ $? -ne 0 ]; then
     echo "Error: Script Blender failed"
     exit 1
