@@ -1,7 +1,8 @@
 # MealsRetrieval-ROOMELSA
 
 ## Usage:
-We use **Python 3.10.13** and ubuntu 22.04
+We use **Python 3.10.13** and **ubuntu 22.04**
+36+ Gb vram GPU
 ### Install Requirements:
 
 ```
