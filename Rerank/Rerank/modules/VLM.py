@@ -3,7 +3,21 @@ import torchvision.transforms as T
 from PIL import Image
 from torchvision.transforms.functional import InterpolationMode
 from transformers import AutoModel, AutoTokenizer, set_seed
-set_seed(42) 
+import numpy as np
+import random
+def set_all_seeds(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)  # For multi-GPU setups
+    torch.backends.cudnn.deterministic = True  # Ensure deterministic behavior
+    torch.backends.cudnn.benchmark = False  # Disable benchmark for reproducibility
+    set_seed(seed)  # Transformers library seed
+
+# Set the seed
+set_all_seeds(42)
+
 IMAGENET_MEAN = (0.485, 0.456, 0.406)
 IMAGENET_STD = (0.229, 0.224, 0.225)
 
@@ -32,7 +46,7 @@ def find_closest_aspect_ratio(aspect_ratio, target_ratios, width, height, image_
                 best_ratio = ratio
     return best_ratio
 
-def dynamic_preprocess(image, min_num=1, max_num=6, image_size=448, use_thumbnail=False):
+def dynamic_preprocess(image, min_num=1, max_num=12, image_size=448, use_thumbnail=False):
     orig_width, orig_height = image.size
     aspect_ratio = orig_width / orig_height
 
@@ -70,7 +84,7 @@ def dynamic_preprocess(image, min_num=1, max_num=6, image_size=448, use_thumbnai
         processed_images.append(thumbnail_img)
     return processed_images
 
-def load_image(image_file, input_size=448, max_num=6):
+def load_image(image_file, input_size=448, max_num=12):
     image = Image.open(image_file).convert('RGB')
     transform = build_transform(input_size=input_size)
     images = dynamic_preprocess(image, image_size=input_size, use_thumbnail=False, max_num=max_num)
@@ -88,7 +102,7 @@ def load_model():
         trust_remote_code=True).eval().cuda()
     tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True, use_fast=False)
 
-    generation_config = dict(max_new_tokens=1024, do_sample=True, temperature=0.01)
+    generation_config = dict(max_new_tokens=1024, do_sample=True,temperature=0.1)
     return model, tokenizer, generation_config
 
 
@@ -124,16 +138,19 @@ Focus on accuracy. Only choose based on detailed matching."""
                                 history=None, return_history=True)
  
     import re
-    match = re.search(r'\d+', response)  # Find number in response
+    match = re.search(r'\d+', response)  # Tìm số trong chuỗi
     if match:
         number = int(match.group())
-        print(number)  # Output: 1    
+        # print(number)  # Output: 1    
 
     top1 = int(number)
     if top1 == 2:
-        print("top 1 is: ", Rerank_list[int(number)])
+        print("Query: ", query_id)
+        print("New top 1 is: ", Rerank_list[int(number)])
         tmp = Rerank_list[1]
         Rerank_list[1] = Rerank_list[2]
         Rerank_list[2] = tmp
+        
+        
 
     return Rerank_list
