@@ -26,7 +26,7 @@ chmod +x Data_preprocessing/run.sh
 ```
 Run:
 ```
-Data_preprocessing/run.sh /path/to/your/objects/forder/
+Data_preprocessing/run.sh /path/to/your/objects/folder/
 ```
 **Objects folder format should look like this :**
 ```
