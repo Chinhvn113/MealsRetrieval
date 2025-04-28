@@ -40,7 +40,7 @@ after rendering:
 │   └── obj1/
 |           rendered_images/
 |           caption.txt
-|              .....
+|           .....
 │   └── obj2/
 |           rendered_images/
 |           caption.txt
