@@ -27,7 +27,7 @@ cd ..
 ### Download blender:
 - Windows: Download using this link
  https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-windows-x64.zip
-- Linux: enter this command in terminal
+- Linux: Enter this command in terminal
 ```
 wget https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-linux-x64.tar.xz
 ```
@@ -55,7 +55,7 @@ Windows:
 Data_preprocessing/run_win.sh /path/to/your/objects/folder/
 ```
 
-after rendering:
+After rendering:
 ```
 /path/to/objects/
 │   └── obj1/
