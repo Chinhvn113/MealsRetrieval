@@ -1,6 +1,6 @@
 from Database import FAISSManager
 from Panotomask import Maskcreation 
-from ZeroPainterLoveLLM import HLongBeo, ExtractLLM
+from ZeroPainterLoveLLM import Inpainting, ExtractLLM
 import os 
 import argparse
 import pandas as pd
@@ -9,7 +9,7 @@ from tqdm import tqdm  # Add tqdm
 from Rerank import Reranker
 # Initialize components
 maskcreation = Maskcreation()
-zeropainter = HLongBeo()
+zeropainter = Inpainting()
 faissmanager = FAISSManager(index_dir='/root/faiss_index', embedding_dim = 1024)
 extractor = ExtractLLM()
 reranker = Reranker()
