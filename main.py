@@ -40,7 +40,8 @@ def process(room_folder, input_dir, input_text, input_pano, maskcreation, zeropa
             sorted_items = sorted(score_map.items(), key=lambda x: x[1], reverse=True)
             top_10_object_dirs = [k for k, v in sorted_items[:10]]
             top_10_object_dirs.insert(0, room_folder)
-            return top_10_object_dirs
+            top_10_reranked = reranker(input_dir, top_10_object_dirs) 
+            return top_10_reranked
 
     elif mask != None and check==1:
         input_text_extracted = extractor.extracting(input_text)
