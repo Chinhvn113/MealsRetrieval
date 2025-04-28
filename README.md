@@ -19,7 +19,8 @@ unzip private.zip
 wget https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-linux-x64.tar.xz
 ```
 **Download and extract the Blender folder into the Data_preprocessing folder.**
-
+### Download inpainting model weights
+Download [models](https://huggingface.co/PAIR/Zero-Painter) weights to the `models` folder inside ZeroPainter
 ### Start Preprocessing:
 #### If you are using Windows, use Git Bash instead of CMD/PowerShell.
 Grant permissions: 
