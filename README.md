@@ -18,7 +18,6 @@ cd ZeroPainter
 mkdir models
 git clone https://huggingface.co/PAIR/Zero-Painter
 mv Zero-Painter/* models
-rmdir Zero-Painter
 cd ..
 ```
 ## Data Preprocessing
