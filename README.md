@@ -17,8 +17,9 @@ Download [models](https://huggingface.co/PAIR/Zero-Painter) weights to the `mode
 cd ZeroPainter
 mkdir models
 git clone https://huggingface.co/PAIR/Zero-Painter
-mv Zero-Painter/* Zero-Painter/.* models
+mv Zero-Painter/* models
 rmdir Zero-Painter
+cd ..
 ```
 ## Data Preprocessing
 ### download blender:
