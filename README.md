@@ -1,8 +1,9 @@
 # MealsRetrieval-ROOMELSA
 
 ## Usage:
+We use **Python 3.10.13** and ubuntu 22.04
 ### Install Requirements:
-- **Python 3.10.13**
+
 ```
 pip install -r requirements.txt
 ```
