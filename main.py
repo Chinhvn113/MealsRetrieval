@@ -8,11 +8,7 @@ import csv
 from tqdm import tqdm  # Add tqdm
 from Rerank import Reranker
 # Initialize components
-maskcreation = Maskcreation()
-zeropainter = Inpainting()
-faissmanager = FAISSManager(index_dir='/root/faiss_index', embedding_dim = 1024)
-extractor = ExtractLLM()
-reranker = Reranker()
+
 # maskcreation = None
 # zeropainter = None
 def process(room_folder, input_dir, input_text, input_pano, maskcreation, zeropainter, faissmanager):
@@ -145,10 +141,16 @@ def main( input_dir, maskcreation, zeropainter, faissmanager):
     return answers
 
 if __name__ == '__main__':
+
     parser = argparse.ArgumentParser(description='Run pipeline')
     parser.add_argument('--input', required=True, help='Input dir')
+    parser.add_argument('--index_save_dir', required=True, help='Input dir')
     arg = parser.parse_args()
-    
+    maskcreation = Maskcreation()
+    zeropainter = Inpainting()
+    faissmanager = FAISSManager(index_dir=arg.index_save_dir, embedding_dim = 1024)
+    extractor = ExtractLLM()
+    reranker = Reranker()    
     answer = main(arg.input, maskcreation, zeropainter, faissmanager)
     df = pd.DataFrame(answer)
     df.to_csv('MealsRetrieval_1.csv', index=False)
