@@ -1,0 +1,36 @@
+48eb Pin number 26 X
+69d0 Tủ rèm hoa, query dài 
+254a tủ credenza khung chữ nhật nhỏ
+ac2b giường thủy thủ
+c487 Đèn 6 cái 
+d3e9 couch query ngắn
+5927 tủ gờ họa tiết hoa
+3634 bàn học
+ae69 tủ 4 cánh
+b8a2 tủ TV
+3b1c giường vali X
+5ba2 bàn cafe tròn 2 cái X
+bc9f marble top, adorned with gold hardware and ornate legs. X
+50a đèn thanh sắt
+0470 đèn chum 3 cái
+a44 ghế nhỏ có marble 
+d8eb pin
+
+
+1.1 seed 36, base (llmteacherseed36) - threshold 2200 - 0.94
+254a rank 2 E
+3634 rank 2 E
+ac2b rank 3 E
+ae69 rank 2 E
+b8a2 rank 2 E
+d3e9 rank 2 E
+5927 rank 3 E
+
+1.2 seed 36, base (llmteacherseed36) - threshold 100000 - 0.954
+5ba2 rank 2 E
+ae69 rank 5 Z
+c487 rank 2 E
+b8a2 rank 2 Z
+
+
+1.3 seed 36, temp = 0.1, threshold 2200 to 100000 - 9.5
