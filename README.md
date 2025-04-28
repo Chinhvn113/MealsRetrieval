@@ -6,8 +6,8 @@ pip install -r requirements.txt
 ```
 ### Dowload dataset
 ```
-gdown
-unzip
+gdown 'https://drive.google.com/file/d/10EkNQBO_DBKwsEkNVVeJMS3grHCO1Ruz/view?usp=sharing'
+unzip private.zip 
 ```
 ### download blender:
 - windown: Download using this link
@@ -33,8 +33,11 @@ Run:
 │   └── obj1/  
 │   └── obj2/ 
 ```
-
+###Construct database:
+```
+python Database/faiss_retrive_demo.py --object_dir path/to/your/object --index_save_dir path/to/your/indexfolder #save index database into a folder
+```
 ### Run inference:
 ```
-python main.py --input private
+python main.py --input path/to/privatedataset --index_save_dir path/to/your/indexfolder
 ```
