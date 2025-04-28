@@ -20,6 +20,7 @@ wget https://mirror.freedif.org/blender/release/Blender4.4/blender-4.4.0-linux-x
 **Download and extract the Blender folder into the Data_preprocessing folder.**
 
 ### Start Preprocessing:
+#### If you are using Windows, use Git Bash instead of CMD/PowerShell.
 Grant permissions: 
 ```
 chmod +x Data_preprocessing/run.sh
