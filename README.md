@@ -7,7 +7,7 @@ pip install -r requirements.txt
 ```
 ### Dowload dataset
 ```
-gdown 'https://drive.google.com/file/d/10EkNQBO_DBKwsEkNVVeJMS3grHCO1Ruz/view?usp=sharing'
+gdown --fuzzy 'https://drive.google.com/file/d/10EkNQBO_DBKwsEkNVVeJMS3grHCO1Ruz/view?usp=sharing'
 unzip private.zip 
 ```
 ### download blender:
