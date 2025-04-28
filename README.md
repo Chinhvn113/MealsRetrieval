@@ -1,5 +1,5 @@
 # MealsRetrieval-ROOMELSA
-[Technical Report](https://drive.google.com/file/d/1gqrFMLRKjRMgXhRbXlelclNUm4v6EtAy/view?usp=sharing)
+[Technical Report](https://drive.google.com/file/d/1NyK8ZdrA9-NU3vMEIvsJ_BISX6UZwRYo/view?usp=sharing)
 ## Usage:
 We use **Python 3.10.13** and **ubuntu 22.04**
 
