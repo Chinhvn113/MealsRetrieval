@@ -1,7 +1,7 @@
 # MealsRetrieval-ROOMELSA
 [Technical Report](https://drive.google.com/file/d/1NyK8ZdrA9-NU3vMEIvsJ_BISX6UZwRYo/view?usp=sharing)
 ## Usage:
-We use **Python 3.10.13** and **ubuntu 22.04**
+We use **Python 3.10.13** and **Ubuntu 22.04**
 
 Requires 25+ GB VRAM
 ### Install Requirements:
@@ -9,7 +9,7 @@ Requires 25+ GB VRAM
 ```
 pip install -r requirements.txt
 ```
-### Dowload dataset
+### Download dataset
 ```
 gdown --fuzzy 'https://drive.google.com/file/d/10EkNQBO_DBKwsEkNVVeJMS3grHCO1Ruz/view?usp=sharing'
 unzip private.zip 
