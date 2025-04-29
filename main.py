@@ -5,12 +5,9 @@ import os
 import argparse
 import pandas as pd
 import csv
-from tqdm import tqdm  # Add tqdm
+from tqdm import tqdm  
 from Rerank import Reranker
-# Initialize components
 
-# maskcreation = None
-# zeropainter = None
 def process(room_folder, input_dir, input_text, input_pano, maskcreation, zeropainter, faissmanager):
     if not input_text:
         print('Cannot read text')
@@ -110,7 +107,7 @@ def process(room_folder, input_dir, input_text, input_pano, maskcreation, zeropa
 
 def main( input_dir, maskcreation, zeropainter, faissmanager):
     answers = []
-    scenes = os.listdir(input_dir)[1]  
+    scenes = input_dir + '/scenes'  
     scene_path = os.path.join(input_dir, scenes)  
     room_folders = [d for d in os.listdir(scene_path) if os.path.isdir(os.path.join(scene_path, d))]
 
