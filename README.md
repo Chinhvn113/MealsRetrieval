@@ -3,7 +3,7 @@
 ## Usage:
 We use **Python 3.10.13**, **Ubuntu 22.04**, **cuda version 12.8** and **torch2.7.0**
 
-Requires 26+ GB VRAM
+Requires 27+ GB VRAM
 ### Install Requirements:
 
 ```
