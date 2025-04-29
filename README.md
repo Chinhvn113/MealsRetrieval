@@ -5,7 +5,9 @@ We use **Python 3.10.13**, **Ubuntu 22.04**, **cuda version 12.8** and **torch2.
 
 Requires 27+ GB VRAM
 ### Install Requirements:
-Go to this [link](https://github.com/Dao-AILab/flash-attention/releases) to get the suitable wheel for flash-attn library
+First go to this [link](https://github.com/Dao-AILab/flash-attention/releases) to get the suitable wheel for flash-attn library
+(Missing flash-attn may downgrades our models performance)
+Then install all requirements
 ```
 pip install -r requirements.txt
 ```
