@@ -7,7 +7,8 @@ Requires 27+ GB VRAM
 ### Install Requirements:
 First go to this [link](https://github.com/Dao-AILab/flash-attention/releases) to get the suitable wheel for flash-attn library
 (Missing flash-attn may downgrades our models performance)
-Then install all requirements
+
+After that, install all requirements:
 ```
 pip install -r requirements.txt
 ```
