@@ -16,7 +16,7 @@ unzip private.zip
 ```
 ### Download inpainting model weights
 Download [models](https://huggingface.co/PAIR/Zero-Painter) weights to the `models` folder inside ZeroPainter
-First install lfs:
+- First install lfs:
 ```
 sudo apt update
 sudo apt install git-lfs
