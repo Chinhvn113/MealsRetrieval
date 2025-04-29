@@ -1,10 +1,10 @@
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, set_seed
 import re
 import os
 import time
-
-
+import numpy as np
+import random
 class ExtractLLM:
     def __init__(self, seed=36):
         self.seed = seed if seed is not None else int(time.time())
@@ -19,7 +19,18 @@ class ExtractLLM:
     def extracting(self, query, seed=36):
         # Seed handling
         seed = seed if seed is not None else self.seed
-        torch.manual_seed(seed)
+        def set_all_seeds(seed):
+            random.seed(seed)
+            np.random.seed(seed)
+            torch.manual_seed(seed)
+            torch.cuda.manual_seed(seed)
+            torch.cuda.manual_seed_all(seed)  # For multi-GPU setups
+            torch.backends.cudnn.deterministic = True  # Ensure deterministic behavior
+            torch.backends.cudnn.benchmark = False  # Disable benchmark for reproducibility
+            set_seed(seed)  # Transformers library seed
+
+        # Set the seed
+        set_all_seeds(seed)
 
         # Rest of your code remains unchanged
         prompt = f'''Explain the furniture description and clarify its components, following the given instruction.
@@ -37,6 +48,7 @@ class ExtractLLM:
         **Example:**
             Input: "A bunk bed for kids to sleep in"
             Response: Stacked bed for kids to sleep in
+
             Input: "A cylinder toilet tissue with a pink rabbit pattern."
             Response: A cylinder-shaped toilet tissue with pink rabbit pattern. 
 
