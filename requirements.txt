@@ -11,10 +11,10 @@ scipy
 opencv-python
 matplotlib
 omegaconf
-faiss-gpu-cu12
+faiss-gpu-cu12 # if using cu11x change to faiss-gpu-cu11 or faiss-cpu
 pillow
 tqdm
 scikit-learn
 ultralytics
-setencepiece
+sentencepiece
 accelerate
