@@ -123,12 +123,12 @@ Focus only on these details:
 - Number of parts (like doors, handles, shelves).
 - Color (e.g., silver, white, black, wood).
 - Type of item (fridge, cabinet, shelf, etc.).
-- Its function (what it is used for).
+- Its purpose or function (storing food, placing a TV, serving coffee).
 
 Choose the one that matches all of these most correctly.
-
 If an image has the wrong number of doors or is a different type, it should not be chosen.
-
+Pay special attention to unique functional details in the description, such as hidden drawers, separated, swivel, split into parts, foldable, ...
+Look for the image that fit with most details
 Just answer with "1" or "2". No explanation.""" 
     response, history = model.chat(tokenizer, pixel_values, question, generation_config,
                                 history=None, return_history=True)
