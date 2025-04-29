@@ -83,7 +83,6 @@ def dynamic_preprocess(image, min_num=1, max_num=12, image_size=448, use_thumbna
         thumbnail_img = image.resize((image_size, image_size))
         processed_images.append(thumbnail_img)
     return processed_images
-
 def load_image(image_file, input_size=448, max_num=12):
     image = Image.open(image_file).convert('RGB')
     transform = build_transform(input_size=input_size)
@@ -93,7 +92,7 @@ def load_image(image_file, input_size=448, max_num=12):
     return pixel_values
 
 def load_model():
-    path = 'OpenGVLab/InternVL2_5-8B-MPO'
+    path = 'OpenGVLab/InternVL2_5-4B-MPO'
     model = AutoModel.from_pretrained(
         path,
         torch_dtype=torch.bfloat16,
@@ -115,30 +114,27 @@ def main(model, tokenizer, generation_config, images_list, Rerank_list, query, q
 
     pixel_values = torch.cat(( pixel_values1, pixel_values2), dim=0)
 
-    question = f"""<image>\n
+    question = f"""<image>\nThere are two images of furniture or appliances above.
 
-You are given two images of furniture items. Your task is to carefully examine both images and determine which one matches the following description most accurately:
+Which one matches this description best: "{query}"?
 
-"{query}"
+Focus only on these details:
 
-You must strictly focus on:
-- **Color**: Compare the exact colors described with those visible in the images.
-- **Material and texture**: Identify the material (e.g., wood, leather, fabric) and texture (e.g., smooth, rough) if mentioned.
-- **Type and style**: Recognize the specific type of furniture (e.g., chair, sofa, table) and its style (e.g., modern, vintage, minimalist).
-- **Functionality**: Consider the intended use of the item (e.g., relaxing, working, dining).
+- Number of parts (like doors, handles, shelves).
+- Color (e.g., silver, white, black, wood).
+- Type of item (fridge, cabinet, shelf, etc.).
+- Its function (what it is used for).
 
-**Important Instructions:**
-- Pay close attention to small details in the description.
-- Do not generalize based on overall appearance; match based on listed features.
-- If both images partially match, choose the one that aligns better with the most critical elements of the description (color and type are highest priority).
-- Provide only the answer: "1" if the first image matches better, or "2" if the second image matches better. No explanation needed.
+Choose the one that matches all of these most correctly.
 
-Focus on accuracy. Only choose based on detailed matching.""" 
+If an image has the wrong number of doors or is a different type, it should not be chosen.
+
+Just answer with "1" or "2". No explanation.""" 
     response, history = model.chat(tokenizer, pixel_values, question, generation_config,
                                 history=None, return_history=True)
  
     import re
-    match = re.search(r'\d+', response)  # Tìm số trong chuỗi
+    match = re.search(r'\d+', response) 
     if match:
         number = int(match.group())
         # print(number)  # Output: 1    
