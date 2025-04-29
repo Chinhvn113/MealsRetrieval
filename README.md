@@ -3,7 +3,7 @@
 ## Usage:
 We use **Python 3.10.13** and **Ubuntu 22.04**
 
-Requires 25+ GB VRAM
+Requires 21+ GB VRAM
 ### Install Requirements:
 
 ```
