@@ -1,9 +1,9 @@
 # MealsRetrieval-ROOMELSA
 [Technical Report](https://drive.google.com/file/d/1NyK8ZdrA9-NU3vMEIvsJ_BISX6UZwRYo/view?usp=sharing)
 ## Usage:
-We use **Python 3.10.13** and **Ubuntu 22.04**
+We use **Python 3.10.13**, **Ubuntu 22.04**, **cuda vesion 12.8** and **torch2.7.0**
 
-Requires 21+ GB VRAM
+Requires 26+ GB VRAM
 ### Install Requirements:
 
 ```
