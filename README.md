@@ -11,7 +11,7 @@ First install pytorch
 Then go to this [link](https://github.com/Dao-AILab/flash-attention/releases) to get the suitable wheel for flash-attn library, if theres no suiltable wheel, use `pip install flash-attn --no-build-isolation` or proceed without it
 (Missing flash-attn may downgrades our models performance).
 
-Script for torch2.6 and cuda>=12.6 `pip install "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3%2Bcu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl"`
+Script for torch2.6 and cuda12x `pip install "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3%2Bcu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl"`
 
 After that, install all requirements:
 ```
