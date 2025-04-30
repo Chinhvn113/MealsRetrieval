@@ -1,12 +1,17 @@
 # MealsRetrieval-ROOMELSA
 [Technical Report](https://drive.google.com/file/d/1NyK8ZdrA9-NU3vMEIvsJ_BISX6UZwRYo/view?usp=sharing)
 ## Usage:
-We use **Python 3.10.13**, **Ubuntu 22.04**, **cuda version 12.8** and **torch2.7.0**
+We use **Python 3.10.13**, **Ubuntu 22.04**, **cuda version 12.8** and **torch2.6.0**
 
 Requires 27+ GB VRAM
 ### Install Requirements:
-First go to this [link](https://github.com/Dao-AILab/flash-attention/releases) to get the suitable wheel for flash-attn library, if theres no suiltable wheel, use `pip install flash-attn --no-build-isolation` or proceed without it
+First install pytorch
+`pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu126`
+
+Then go to this [link](https://github.com/Dao-AILab/flash-attention/releases) to get the suitable wheel for flash-attn library, if theres no suiltable wheel, use `pip install flash-attn --no-build-isolation` or proceed without it
 (Missing flash-attn may downgrades our models performance).
+
+Script for torch2.6 and cuda>=12.6 `pip install "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3%2Bcu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl"`
 
 After that, install all requirements:
 ```
